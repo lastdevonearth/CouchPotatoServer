@@ -11,6 +11,9 @@ import subprocess
 import sys
 import traceback
 
+reload(sys)
+sys.setdefaultencoding('utf8')
+
 # Root path
 base_path = dirname(os.path.abspath(__file__))
 
