@@ -1349,7 +1349,7 @@ config = [{
                     'name': 'file_name',
                     'label': 'File naming',
                     'description': 'Name of the file',
-                    'default': '<thename><cd>.<ext>',
+                    'default': '<thename><cd>.<quality_type>.<quality>.<imdb_id>.<ext>',
                     'type': 'choice',
                     'options': rename_options
                 },
