@@ -197,7 +197,7 @@ class TheMovieDb(MovieProvider):
         params = tryUrlencode(params)
 
         try:
-            url = 'https://api.themoviedb.org/3/%s?api_key=%s&language=fr%s' % (call, self.conf('api_key'), '&%s' % params if params else '')
+            url = 'http://api.themoviedb.org/3/%s?api_key=%s&language=fr%s' % (call, self.conf('api_key'), '&%s' % params if params else '')
             data = self.getJsonData(url, show_error = False)
         except:
             log.debug('Movie not found: %s, %s', (call, params))
@@ -227,7 +227,7 @@ config = [{
             'options': [
                 {
                     'name': 'api_key',
-                    'default': '9b939aee0aaafc12a65bf448e4af9543',
+                    'default': 'b7aa93efd488229b5b1a5265f72d35ef',
                     'label': 'Api Key',
                 },
             ],
