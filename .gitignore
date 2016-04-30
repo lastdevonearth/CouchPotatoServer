@@ -1,13 +1,16 @@
-#  CP Related        #
-######################
+*.pyc
 /data/
 /_env/
 /_source/
 .project
 .pydevproject
-node_modules
+/node_modules/
+/.tmp/
+/.sass-cache/
+.coverage
+coverage.xml
+nosetests.xml
 /.idea
-.tmp
 
 #  Compiled source   #
 ######################
