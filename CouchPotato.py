@@ -55,7 +55,7 @@ class Loader(object):
             os.makedirs(self.data_dir)
 
         # Create logging dir
-        self.log_dir = os.path.join(self.data_dir, 'logs');
+        self.log_dir = os.path.join(self.data_dir, 'logs')
         if not os.path.isdir(self.log_dir):
             os.makedirs(self.log_dir)
 
@@ -82,7 +82,7 @@ class Loader(object):
 
     def onExit(self, signal, frame):
         from couchpotato.core.event import fireEvent
-        fireEvent('app.shutdown', single = True)
+        fireEvent('app.shutdown', single=True)
 
     def run(self):
 
@@ -99,8 +99,10 @@ class Loader(object):
             # remove old pidfile first
             try:
                 if self.runAsDaemon():
-                    try: self.daemon.stop()
-                    except: pass
+                    try:
+                        self.daemon.stop()
+                    except:
+                        pass
             except:
                 self.log.critical(traceback.format_exc())
 
@@ -125,7 +127,7 @@ class Loader(object):
                 self.log.critical(traceback.format_exc())
 
     def runAsDaemon(self):
-        return self.options.daemon and  self.options.pid_file
+        return self.options.daemon and self.options.pid_file
 
 
 if __name__ == '__main__':
