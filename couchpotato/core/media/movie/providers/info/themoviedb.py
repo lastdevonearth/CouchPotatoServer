@@ -54,7 +54,8 @@ class TheMovieDb(MovieProvider):
             languages.remove('en')
 
         # default language has a special management
-        languages.remove(self.default_language)
+        if self.default_language in languages:
+            languages.remove(self.default_language)
 
         self.languages = languages
 
@@ -135,7 +136,7 @@ class TheMovieDb(MovieProvider):
         movie_others = [ self.request('movie/%s' % movie.get('id'), {
             'append_to_response': 'alternative_titles' + (',images,casts' if extended else ''),
 			'language': language
-    }) for language in self.languages] if self.languages else []
+        }) for language in self.languages] if self.languages else []
 
         # Images
         poster = self.getImage(movie, type = 'poster', size = 'w154')

@@ -45,3 +45,7 @@ Thumbs.db
 .directory
 *~
 *.torrent
+
+# Visual Studio
+
+/.vs
